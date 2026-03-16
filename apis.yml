@@ -1,0 +1,35 @@
+aid: apache-cloudstack
+name: Apache CloudStack
+description: >-
+  Apache CloudStack is an open-source cloud computing software for creating, managing, and deploying infrastructure cloud services. It provides a comprehensive IaaS platform with support for multiple hypervisors and a rich API for cloud resource management.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Cloud
+  - IaaS
+  - Infrastructure
+  - Virtualization
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-cloudstack:apache-cloudstack-api
+    name: Apache CloudStack API
+    description: >-
+      The CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage, accounts, domains, zones, and all other cloud infrastructure resources, with support for both synchronous and asynchronous operations.
+    humanURL: https://cloudstack.apache.org/api/
+    tags:
+      - REST
+      - Cloud
+      - IaaS
+      - Virtual Machines
+    properties:
+      - type: Documentation
+        url: https://cloudstack.apache.org/api/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
