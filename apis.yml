@@ -23,9 +23,9 @@ apis:
       The CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage, accounts, domains, zones, and all other cloud infrastructure resources, with support for both synchronous and asynchronous operations.
     humanURL: https://cloudstack.apache.org/api/
     tags:
-      - REST
       - Cloud
       - IaaS
+      - REST
       - Virtual Machines
     properties:
       - type: Documentation
