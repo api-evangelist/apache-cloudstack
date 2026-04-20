@@ -1,0 +1,87 @@
+vocabulary:
+  provider: Apache CloudStack
+  description: >-
+    Domain taxonomy mapping resources, actions, and personas for Apache CloudStack
+    IaaS cloud infrastructure management including virtual machines, networks, and storage.
+
+  operational:
+    resources:
+      - name: VirtualMachine
+        description: A virtual machine instance deployed from a template in a CloudStack zone.
+      - name: Network
+        description: A CloudStack network (Isolated, Shared, or L2) providing VM connectivity.
+      - name: Volume
+        description: A CloudStack block storage volume (ROOT or DATADISK) attached to a VM.
+      - name: Zone
+        description: An availability zone grouping compute, network, and storage resources.
+      - name: ServiceOffering
+        description: A compute sizing specification defining CPU, memory, and storage for a VM.
+      - name: Template
+        description: A VM disk image used as the base for deploying new virtual machines.
+      - name: Account
+        description: A CloudStack account grouping users and resources for billing and administration.
+      - name: AsyncJob
+        description: An asynchronous job token for tracking the progress of long-running operations.
+
+    actions:
+      - name: Deploy
+        description: Create and start a new virtual machine in a specified zone.
+        httpMethods:
+          - GET
+      - name: List
+        description: Enumerate resources such as VMs, networks, volumes, or zones.
+        httpMethods:
+          - GET
+          - POST
+      - name: Start
+        description: Start a stopped virtual machine.
+        httpMethods:
+          - GET
+      - name: Stop
+        description: Stop a running virtual machine gracefully.
+        httpMethods:
+          - GET
+      - name: Destroy
+        description: Permanently delete a virtual machine and its resources.
+        httpMethods:
+          - GET
+      - name: Poll
+        description: Query the status of an asynchronous job until it completes.
+        httpMethods:
+          - GET
+
+    personas:
+      - name: Cloud Administrator
+        description: Operator responsible for CloudStack zone administration and infrastructure management.
+      - name: Cloud Tenant
+        description: End user deploying and managing virtual machines within allocated cloud resources.
+
+  capabilities:
+    resources:
+      - name: InfrastructureInventory
+        description: Combined view of VMs, networks, volumes, and zones in a CloudStack deployment.
+      - name: VMLifecycle
+        description: The sequence of states a virtual machine transitions through from deployment to destruction.
+
+    actions:
+      - name: ManageVMs
+        description: Deploy, start, stop, and list virtual machines in a CloudStack zone.
+      - name: BrowseInfrastructure
+        description: List networks, volumes, and zones to understand available cloud resources.
+      - name: TrackAsyncOperations
+        description: Poll asynchronous job results to track completion of long-running operations.
+
+    workflows:
+      - name: CloudStack IaaS Management
+        description: End-to-end workflow for deploying and managing virtual machines in an Apache CloudStack cloud.
+        capabilities:
+          - manage-virtual-machines
+          - poll-async-jobs
+          - list-networks
+          - manage-volumes
+          - browse-zones
+
+  crossReference:
+    openapi: openapi/apache-cloudstack-api-openapi.yaml
+    naftiko: capabilities/cloudstack-iaas-management.yaml
+    spectral: rules/apache-cloudstack-spectral-rules.yml

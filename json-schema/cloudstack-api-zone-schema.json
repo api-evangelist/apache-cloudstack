@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/json-schema/cloudstack-api-zone-schema.json",
+  "title": "Zone",
+  "description": "A CloudStack availability zone grouping compute, network, and storage resources.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "UUID of the zone.", "example": "zone-uuid-abcd" },
+    "name": { "type": "string", "description": "Name of the zone.", "example": "us-east-1" },
+    "networktype": { "type": "string", "description": "Network type of the zone (Basic or Advanced).", "enum": ["Basic", "Advanced"], "example": "Advanced" },
+    "allocationstate": { "type": "string", "description": "Allocation state of the zone (Enabled or Disabled).", "example": "Enabled" },
+    "securitygroupsenabled": { "type": "boolean", "description": "Whether security groups are enabled in the zone.", "example": false }
+  }
+}

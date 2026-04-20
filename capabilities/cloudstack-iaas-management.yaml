@@ -1,0 +1,46 @@
+naftiko: 1.0.0-alpha1
+info:
+  title: Apache CloudStack IaaS Management
+  description: >-
+    Workflow capability for managing Apache CloudStack infrastructure resources including
+    virtual machine lifecycle, network configuration, storage volumes, and zone administration.
+  version: 4.19.0
+  contact:
+    name: Apache CloudStack Community
+    url: https://cloudstack.apache.org/
+
+servers:
+  rest:
+    url: http://localhost:8080/client/api
+    port: 8080
+  mcp:
+    port: 9090
+
+tools:
+  - name: manage-virtual-machines
+    description: Deploy, start, stop, and list virtual machines in a CloudStack zone.
+    operations:
+      - $ref: shared/cloudstack-api.yaml#/operations/deployVirtualMachine
+      - $ref: shared/cloudstack-api.yaml#/operations/listVirtualMachines
+      - $ref: shared/cloudstack-api.yaml#/operations/startVirtualMachine
+      - $ref: shared/cloudstack-api.yaml#/operations/stopVirtualMachine
+
+  - name: poll-async-jobs
+    description: Poll the status of asynchronous CloudStack operations until completion.
+    operations:
+      - $ref: shared/cloudstack-api.yaml#/operations/queryAsyncJobResult
+
+  - name: list-networks
+    description: Browse available networks in a CloudStack zone for VM placement.
+    operations:
+      - $ref: shared/cloudstack-api.yaml#/operations/listNetworks
+
+  - name: manage-volumes
+    description: List and inspect storage volumes attached to virtual machines.
+    operations:
+      - $ref: shared/cloudstack-api.yaml#/operations/listVolumes
+
+  - name: browse-zones
+    description: List all availability zones to identify where to deploy resources.
+    operations:
+      - $ref: shared/cloudstack-api.yaml#/operations/listZones

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/json-structure/cloudstack-api-async-job-response-structure.json",
+  "title": "AsyncJobResponse",
+  "description": "Response returned when an asynchronous CloudStack API operation is initiated.",
+  "type": "record",
+  "fields": [
+    { "name": "jobid", "type": "string", "description": "UUID of the asynchronous job to poll for completion." },
+    { "name": "id", "type": "string", "description": "UUID of the resource being created or modified." }
+  ]
+}

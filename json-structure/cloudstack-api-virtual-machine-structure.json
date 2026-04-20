@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/json-structure/cloudstack-api-virtual-machine-structure.json",
+  "title": "VirtualMachine",
+  "description": "A CloudStack virtual machine resource with its configuration and runtime state.",
+  "type": "record",
+  "fields": [
+    { "name": "id", "type": "string", "description": "UUID of the virtual machine." },
+    { "name": "name", "type": "string", "description": "Display name of the virtual machine." },
+    { "name": "state", "type": "string", "description": "Current state of the virtual machine." },
+    { "name": "zoneid", "type": "string", "description": "UUID of the zone containing the virtual machine." },
+    { "name": "zonename", "type": "string", "description": "Name of the zone containing the virtual machine." },
+    { "name": "serviceofferingid", "type": "string", "description": "UUID of the service offering used by the virtual machine." },
+    { "name": "templateid", "type": "string", "description": "UUID of the template used to create the virtual machine." },
+    { "name": "cpunumber", "type": "int", "description": "Number of CPU cores." },
+    { "name": "memory", "type": "int", "description": "Memory in megabytes." },
+    { "name": "ipaddress", "type": "string", "description": "Primary IP address of the virtual machine." }
+  ]
+}

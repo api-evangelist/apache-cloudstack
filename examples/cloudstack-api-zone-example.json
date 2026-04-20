@@ -1,0 +1,7 @@
+{
+  "id": "zone-uuid-abcd",
+  "name": "us-east-1",
+  "networktype": "Advanced",
+  "allocationstate": "Enabled",
+  "securitygroupsenabled": false
+}

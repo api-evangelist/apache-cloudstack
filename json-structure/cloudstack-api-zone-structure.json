@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/json-structure/cloudstack-api-zone-structure.json",
+  "title": "Zone",
+  "description": "A CloudStack availability zone grouping compute, network, and storage resources.",
+  "type": "record",
+  "fields": [
+    { "name": "id", "type": "string", "description": "UUID of the zone." },
+    { "name": "name", "type": "string", "description": "Name of the zone." },
+    { "name": "networktype", "type": "string", "description": "Network type of the zone." },
+    { "name": "allocationstate", "type": "string", "description": "Allocation state of the zone." },
+    { "name": "securitygroupsenabled", "type": "boolean", "description": "Whether security groups are enabled in the zone." }
+  ]
+}

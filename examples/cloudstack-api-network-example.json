@@ -1,0 +1,8 @@
+{
+  "id": "net-uuid-1234",
+  "name": "default-network",
+  "state": "Implemented",
+  "zoneid": "zone-uuid-abcd",
+  "type": "Isolated",
+  "cidr": "10.0.0.0/24"
+}

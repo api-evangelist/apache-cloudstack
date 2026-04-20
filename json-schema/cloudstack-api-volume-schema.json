@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/json-schema/cloudstack-api-volume-schema.json",
+  "title": "Volume",
+  "description": "A CloudStack storage volume attached to a virtual machine.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "UUID of the volume.", "example": "vol-uuid-1234" },
+    "name": { "type": "string", "description": "Display name of the volume.", "example": "ROOT-1234" },
+    "type": { "type": "string", "description": "Volume type (ROOT or DATADISK).", "enum": ["ROOT", "DATADISK"], "example": "ROOT" },
+    "state": { "type": "string", "description": "Current state of the volume.", "example": "Ready" },
+    "size": { "type": "integer", "format": "int64", "description": "Volume size in bytes.", "example": 53687091200 },
+    "virtualmachineid": { "type": "string", "description": "UUID of the virtual machine this volume is attached to.", "example": "vm-uuid-1234" }
+  }
+}

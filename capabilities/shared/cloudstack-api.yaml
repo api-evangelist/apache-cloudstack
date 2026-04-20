@@ -1,0 +1,107 @@
+naftiko: 1.0.0-alpha1
+info:
+  title: Apache CloudStack API - Shared Operations
+  description: >-
+    Shared per-API operation definitions for the Apache CloudStack API covering virtual machine
+    lifecycle, network management, volume management, zone administration, and async job polling.
+  version: 4.19.0
+  contact:
+    name: Apache CloudStack Community
+    url: https://cloudstack.apache.org/
+
+operations:
+  - operationId: deployVirtualMachine
+    summary: Deploy Virtual Machine
+    description: Deploy a new virtual machine from a template in a specified zone and service offering.
+    method: GET
+    path: /
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: listVirtualMachines
+    summary: List Virtual Machines
+    description: List all virtual machines with optional filtering by zone, account, and state.
+    method: POST
+    path: /
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: stopVirtualMachine
+    summary: Stop Virtual Machine
+    description: Stop a running virtual machine by its UUID.
+    method: GET
+    path: /vm/stop
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: startVirtualMachine
+    summary: Start Virtual Machine
+    description: Start a stopped virtual machine by its UUID.
+    method: GET
+    path: /vm/start
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: listNetworks
+    summary: List Networks
+    description: List all available networks in the cloud with optional filtering.
+    method: GET
+    path: /network/list
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: listVolumes
+    summary: List Volumes
+    description: List all volumes with optional filtering by virtual machine and type.
+    method: GET
+    path: /volume/list
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: listZones
+    summary: List Zones
+    description: List all availability zones in the CloudStack deployment.
+    method: GET
+    path: /zone/list
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100
+
+  - operationId: queryAsyncJobResult
+    summary: Query Async Job Result
+    description: Query the result of an asynchronous API operation by job ID.
+    method: GET
+    path: /async/query
+    server:
+      rest:
+        url: http://localhost:8080/client/api
+        port: 8100
+      mcp:
+        port: 9100

@@ -1,0 +1,12 @@
+{
+  "id": "vm-uuid-1234",
+  "name": "web-server-01",
+  "state": "Running",
+  "zoneid": "zone-uuid-abcd",
+  "zonename": "us-east-1",
+  "serviceofferingid": "so-uuid-5678",
+  "templateid": "tmpl-uuid-9012",
+  "cpunumber": 2,
+  "memory": 2048,
+  "ipaddress": "10.0.0.100"
+}

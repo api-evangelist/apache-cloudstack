@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/json-structure/cloudstack-api-network-structure.json",
+  "title": "Network",
+  "description": "A CloudStack network resource providing connectivity for virtual machines.",
+  "type": "record",
+  "fields": [
+    { "name": "id", "type": "string", "description": "UUID of the network." },
+    { "name": "name", "type": "string", "description": "Display name of the network." },
+    { "name": "state", "type": "string", "description": "Current state of the network." },
+    { "name": "zoneid", "type": "string", "description": "UUID of the zone containing the network." },
+    { "name": "type", "type": "string", "description": "Type of network." },
+    { "name": "cidr", "type": "string", "description": "CIDR block of the network." }
+  ]
+}
