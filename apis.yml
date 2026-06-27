@@ -40,13 +40,13 @@ apis:
     url: openapi/apache-cloudstack-api-openapi.yaml
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-networks.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-virtual-machines.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-volumes.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-zones.yaml
 common:
 - type: LinkedIn
