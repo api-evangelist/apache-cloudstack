@@ -49,6 +49,12 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-zones.yaml
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-cloudstack-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-cloudstack-domain-security.yml
+- type: Authentication
+  url: authentication/apache-cloudstack-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/apachecloudstack
 - type: GitHubOrganization

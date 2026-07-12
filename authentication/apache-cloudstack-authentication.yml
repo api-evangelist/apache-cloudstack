@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/apache-cloudstack-api-openapi.yaml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyAuth
+  type: apiKey
+  in: query
+  parameter: apikey
+  description: CloudStack API key for HMAC-SHA1 signed request authentication.
+  sources:
+  - openapi/apache-cloudstack-api-openapi.yaml
