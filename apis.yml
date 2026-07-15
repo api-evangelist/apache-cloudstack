@@ -49,6 +49,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-zones.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/apache-cloudstack-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/apache-cloudstack-vulnerability-disclosure.yml
 - type: DomainSecurity
