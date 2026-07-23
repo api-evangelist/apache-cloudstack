@@ -1,0 +1,144 @@
+openapi: 3.0.3
+info:
+  title: Apache CloudStack Networks Volumes API
+  description: The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.
+  version: 4.19.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  contact:
+    name: Apache CloudStack Community
+    url: https://cloudstack.apache.org/
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- url: http://localhost:8080/client/api
+  description: Default local CloudStack Management Server API endpoint
+tags:
+- name: Volumes
+  description: Volume and snapshot storage management operations.
+paths:
+  /volume/list:
+    get:
+      operationId: listVolumes
+      summary: Apache CloudStack List Volumes
+      description: List all volumes with optional filtering by account, zone, virtual machine, or type.
+      tags:
+      - Volumes
+      parameters:
+      - name: command
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - listVolumes
+      - name: virtualmachineid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Filter volumes by virtual machine UUID.
+      - name: type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - ROOT
+          - DATADISK
+        description: Filter by volume type.
+      - name: apikey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of volumes.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VolumeList'
+              examples:
+                ListVolumes200Example:
+                  summary: Default listVolumes 200 response
+                  x-microcks-default: true
+                  value:
+                    listvolumesresponse:
+                      count: 1
+                      volume:
+                      - id: vol-uuid-1234
+                        name: ROOT-1234
+                        type: ROOT
+                        state: Ready
+                        size: 53687091200
+                        virtualmachineid: vm-uuid-1234
+        '401':
+          description: Authentication failed.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      security:
+      - apiKeyAuth: []
+components:
+  schemas:
+    VolumeList:
+      title: VolumeList
+      description: Paginated list of CloudStack volumes.
+      type: object
+      properties:
+        listvolumesresponse:
+          type: object
+          properties:
+            count:
+              type: integer
+              example: 1
+            volume:
+              type: array
+              items:
+                $ref: '#/components/schemas/Volume'
+    Volume:
+      title: Volume
+      description: A CloudStack storage volume attached to a virtual machine.
+      type: object
+      properties:
+        id:
+          type: string
+          description: UUID of the volume.
+          example: vol-uuid-1234
+        name:
+          type: string
+          description: Display name of the volume.
+          example: ROOT-1234
+        type:
+          type: string
+          description: Volume type (ROOT or DATADISK).
+          enum:
+          - ROOT
+          - DATADISK
+          example: ROOT
+        state:
+          type: string
+          description: Current state of the volume.
+          example: Ready
+        size:
+          type: integer
+          format: int64
+          description: Volume size in bytes.
+          example: 53687091200
+        virtualmachineid:
+          type: string
+          description: UUID of the virtual machine this volume is attached to.
+          example: vm-uuid-1234
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: apikey
+      description: CloudStack API key for HMAC-SHA1 signed request authentication.

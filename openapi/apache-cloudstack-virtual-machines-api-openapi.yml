@@ -1,0 +1,471 @@
+openapi: 3.0.3
+info:
+  title: Apache CloudStack Networks Virtual Machines API
+  description: The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.
+  version: 4.19.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  contact:
+    name: Apache CloudStack Community
+    url: https://cloudstack.apache.org/
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- url: http://localhost:8080/client/api
+  description: Default local CloudStack Management Server API endpoint
+tags:
+- name: Virtual Machines
+  description: Virtual machine lifecycle management operations.
+paths:
+  /:
+    get:
+      operationId: deployVirtualMachine
+      summary: Apache CloudStack Deploy Virtual Machine
+      description: Deploy a new virtual machine from a template in a specified zone and service offering.
+      tags:
+      - Virtual Machines
+      parameters:
+      - name: command
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - deployVirtualMachine
+        description: API command name.
+      - name: response
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - json
+          - xml
+          default: json
+        description: Response format.
+      - name: zoneid
+        in: query
+        required: true
+        schema:
+          type: string
+        description: UUID of the zone in which to deploy the virtual machine.
+      - name: serviceofferingid
+        in: query
+        required: true
+        schema:
+          type: string
+        description: UUID of the service offering for the virtual machine.
+      - name: templateid
+        in: query
+        required: true
+        schema:
+          type: string
+        description: UUID of the template to use for the virtual machine.
+      - name: name
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Display name for the virtual machine.
+      - name: apikey
+        in: query
+        required: true
+        schema:
+          type: string
+        description: API key for authentication.
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA1 signature of the request parameters.
+      responses:
+        '200':
+          description: Asynchronous job initiated for VM deployment.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncJobResponse'
+              examples:
+                DeployVirtualMachine200Example:
+                  summary: Default deployVirtualMachine 200 response
+                  x-microcks-default: true
+                  value:
+                    deployvirtualmachineresponse:
+                      jobid: a4b6c8d0-1234-5678-90ab-cdef01234567
+                      id: vm-uuid-1234
+        '400':
+          description: Invalid parameters.
+        '401':
+          description: Authentication failed.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      security:
+      - apiKeyAuth: []
+    post:
+      operationId: listVirtualMachines
+      summary: Apache CloudStack List Virtual Machines
+      description: List all virtual machines with optional filtering by zone, account, state, or other parameters.
+      tags:
+      - Virtual Machines
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - command
+              - apikey
+              - signature
+              properties:
+                command:
+                  type: string
+                  enum:
+                  - listVirtualMachines
+                response:
+                  type: string
+                  enum:
+                  - json
+                  - xml
+                  default: json
+                zoneid:
+                  type: string
+                  description: Filter by zone UUID.
+                state:
+                  type: string
+                  enum:
+                  - Running
+                  - Stopped
+                  - Starting
+                  - Stopping
+                  - Destroyed
+                  description: Filter by VM state.
+                account:
+                  type: string
+                  description: Filter by account name.
+                apikey:
+                  type: string
+                signature:
+                  type: string
+      responses:
+        '200':
+          description: List of virtual machines matching the filter criteria.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VirtualMachineList'
+              examples:
+                ListVirtualMachines200Example:
+                  summary: Default listVirtualMachines 200 response
+                  x-microcks-default: true
+                  value:
+                    listvirtualmachinesresponse:
+                      count: 1
+                      virtualmachine:
+                      - id: vm-uuid-1234
+                        name: web-server-01
+                        state: Running
+                        zoneid: zone-uuid-abcd
+                        zonename: us-east-1
+                        serviceofferingid: so-uuid-5678
+                        templateid: tmpl-uuid-9012
+                        cpunumber: 2
+                        memory: 2048
+                        ipaddress: 10.0.0.100
+        '401':
+          description: Authentication failed.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      security:
+      - apiKeyAuth: []
+  /vm/stop:
+    get:
+      operationId: stopVirtualMachine
+      summary: Apache CloudStack Stop Virtual Machine
+      description: Stop a running virtual machine by its UUID.
+      tags:
+      - Virtual Machines
+      parameters:
+      - name: command
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - stopVirtualMachine
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: UUID of the virtual machine to stop.
+      - name: apikey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Asynchronous job initiated to stop the VM.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncJobResponse'
+              examples:
+                StopVirtualMachine200Example:
+                  summary: Default stopVirtualMachine 200 response
+                  x-microcks-default: true
+                  value:
+                    stopvirtualmachineresponse:
+                      jobid: b5c7d9e1-2345-6789-01bc-def012345678
+        '401':
+          description: Authentication failed.
+        '404':
+          description: Virtual machine not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      security:
+      - apiKeyAuth: []
+  /vm/start:
+    get:
+      operationId: startVirtualMachine
+      summary: Apache CloudStack Start Virtual Machine
+      description: Start a stopped virtual machine by its UUID.
+      tags:
+      - Virtual Machines
+      parameters:
+      - name: command
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - startVirtualMachine
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: UUID of the virtual machine to start.
+      - name: apikey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Asynchronous job initiated to start the VM.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncJobResponse'
+              examples:
+                StartVirtualMachine200Example:
+                  summary: Default startVirtualMachine 200 response
+                  x-microcks-default: true
+                  value:
+                    startvirtualmachineresponse:
+                      jobid: c6d8e0f2-3456-7890-12cd-ef0123456789
+        '401':
+          description: Authentication failed.
+        '404':
+          description: Virtual machine not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      security:
+      - apiKeyAuth: []
+  /async/query:
+    get:
+      operationId: queryAsyncJobResult
+      summary: Apache CloudStack Query Async Job Result
+      description: Query the result of an asynchronous API operation by job ID.
+      tags:
+      - Virtual Machines
+      parameters:
+      - name: command
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - queryAsyncJobResult
+      - name: jobid
+        in: query
+        required: true
+        schema:
+          type: string
+        description: UUID of the async job to query.
+      - name: apikey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Async job status and result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncJobResult'
+              examples:
+                QueryAsyncJobResult200Example:
+                  summary: Default queryAsyncJobResult 200 response
+                  x-microcks-default: true
+                  value:
+                    queryasyncjobresultresponse:
+                      jobid: a4b6c8d0-1234-5678-90ab-cdef01234567
+                      jobstatus: 1
+                      jobresultcode: 0
+                      jobresult:
+                        virtualmachine:
+                          id: vm-uuid-1234
+                          name: web-server-01
+                          state: Running
+        '401':
+          description: Authentication failed.
+        '404':
+          description: Job not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      security:
+      - apiKeyAuth: []
+components:
+  schemas:
+    AsyncJobResponse:
+      title: AsyncJobResponse
+      description: Response returned when an asynchronous CloudStack API operation is initiated.
+      type: object
+      properties:
+        jobid:
+          type: string
+          description: UUID of the asynchronous job to poll for completion.
+          example: a4b6c8d0-1234-5678-90ab-cdef01234567
+        id:
+          type: string
+          description: UUID of the resource being created or modified.
+          example: vm-uuid-1234
+    AsyncJobResult:
+      title: AsyncJobResult
+      description: Result of a completed or in-progress asynchronous CloudStack job.
+      type: object
+      properties:
+        queryasyncjobresultresponse:
+          type: object
+          properties:
+            jobid:
+              type: string
+              description: UUID of the async job.
+              example: a4b6c8d0-1234-5678-90ab-cdef01234567
+            jobstatus:
+              type: integer
+              description: Job status code (0=pending, 1=success, 2=failure).
+              enum:
+              - 0
+              - 1
+              - 2
+              example: 1
+            jobresultcode:
+              type: integer
+              description: Result code (0 for success).
+              example: 0
+            jobresult:
+              type: object
+              description: Result payload containing the resource created or modified.
+    VirtualMachineList:
+      title: VirtualMachineList
+      description: Paginated list of CloudStack virtual machines.
+      type: object
+      properties:
+        listvirtualmachinesresponse:
+          type: object
+          properties:
+            count:
+              type: integer
+              description: Total number of virtual machines matching the query.
+              example: 1
+            virtualmachine:
+              type: array
+              items:
+                $ref: '#/components/schemas/VirtualMachine'
+    VirtualMachine:
+      title: VirtualMachine
+      description: A CloudStack virtual machine resource with its configuration and runtime state.
+      type: object
+      properties:
+        id:
+          type: string
+          description: UUID of the virtual machine.
+          example: vm-uuid-1234
+        name:
+          type: string
+          description: Display name of the virtual machine.
+          example: web-server-01
+        state:
+          type: string
+          description: Current state of the virtual machine.
+          enum:
+          - Running
+          - Stopped
+          - Starting
+          - Stopping
+          - Destroyed
+          - Expunging
+          - Migrating
+          - Error
+          example: Running
+        zoneid:
+          type: string
+          description: UUID of the zone containing the virtual machine.
+          example: zone-uuid-abcd
+        zonename:
+          type: string
+          description: Name of the zone containing the virtual machine.
+          example: us-east-1
+        serviceofferingid:
+          type: string
+          description: UUID of the service offering used by the virtual machine.
+          example: so-uuid-5678
+        templateid:
+          type: string
+          description: UUID of the template used to create the virtual machine.
+          example: tmpl-uuid-9012
+        cpunumber:
+          type: integer
+          description: Number of CPU cores.
+          example: 2
+        memory:
+          type: integer
+          description: Memory in megabytes.
+          example: 2048
+        ipaddress:
+          type: string
+          description: Primary IP address of the virtual machine.
+          example: 10.0.0.100
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: apikey
+      description: CloudStack API key for HMAC-SHA1 signed request authentication.
