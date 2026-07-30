@@ -6,9 +6,22 @@ description: Apache CloudStack is an open-source cloud computing platform develo
   by service providers and enterprises to build public, private, and hybrid cloud environments with virtual machine management,
   networking, storage, and multi-tenancy features.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-cloudstack.png
 tags:
 - Apache
 - Cloud
@@ -21,23 +34,84 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-cloudstack:apache-cloudstack-api
-  name: Apache CloudStack API
-  description: The CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes,
-    accounts, domains, zones, and all cloud infrastructure resources using a query-parameter-based command dispatch pattern
-    with HMAC-SHA1 authentication and asynchronous job support.
+- aid: apache-cloudstack:apache-cloudstack-networks-api
+  name: Apache CloudStack Networks API
+  description: Network and IP address management operations.
   humanURL: https://cloudstack.apache.org/api/
   baseURL: http://localhost:8080/client/api
   tags:
-  - Cloud
-  - IaaS
-  - REST
-  - Virtual Machines
+  - Networks
   properties:
+  - type: OpenAPI
+    url: openapi/apache-cloudstack-networks-api-openapi.yml
   - type: Documentation
     url: https://cloudstack.apache.org/api/
+  - type: GettingStarted
+    url: https://docs.cloudstack.apache.org/en/latest/installguide/
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-networks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-virtual-machines.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-volumes.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-zones.yaml
+- aid: apache-cloudstack:apache-cloudstack-virtual-machines-api
+  name: Apache CloudStack Virtual Machines API
+  description: Virtual machine lifecycle management operations.
+  humanURL: https://cloudstack.apache.org/api/
+  baseURL: http://localhost:8080/client/api
+  tags:
+  - Virtual Machines
+  properties:
   - type: OpenAPI
-    url: openapi/apache-cloudstack-api-openapi.yaml
+    url: openapi/apache-cloudstack-virtual-machines-api-openapi.yml
+  - type: Documentation
+    url: https://cloudstack.apache.org/api/
+  - type: GettingStarted
+    url: https://docs.cloudstack.apache.org/en/latest/installguide/
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-networks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-virtual-machines.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-volumes.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-zones.yaml
+- aid: apache-cloudstack:apache-cloudstack-volumes-api
+  name: Apache CloudStack Volumes API
+  description: Volume and snapshot storage management operations.
+  humanURL: https://cloudstack.apache.org/api/
+  baseURL: http://localhost:8080/client/api
+  tags:
+  - Volumes
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-cloudstack-volumes-api-openapi.yml
+  - type: Documentation
+    url: https://cloudstack.apache.org/api/
+  - type: GettingStarted
+    url: https://docs.cloudstack.apache.org/en/latest/installguide/
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-networks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-virtual-machines.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-volumes.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-cloudstack-zones.yaml
+- aid: apache-cloudstack:apache-cloudstack-zones-api
+  name: Apache CloudStack Zones API
+  description: Zone and availability zone management operations.
+  humanURL: https://cloudstack.apache.org/api/
+  baseURL: http://localhost:8080/client/api
+  tags:
+  - Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-cloudstack-zones-api-openapi.yml
+  - type: Documentation
+    url: https://cloudstack.apache.org/api/
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
   - type: X-NaftikoCapability
@@ -49,6 +123,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apache-cloudstack-zones.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/apache-cloudstack/overview
 - type: AgenticAccess
   url: agentic-access/apache-cloudstack-agentic-access.yml
 - type: VulnerabilityDisclosure
