@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "853e4698-eaed-405d-99fa-aee40bb83c17",
+    "name": "Apache CloudStack Networks API",
+    "description": "The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.\n\nContact Support:\n Name: Apache CloudStack Community",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:01:38.000Z",
+    "updatedAt": "2026-07-28T01:01:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-853e4698-eaed-405d-99fa-aee40bb83c17"
+  },
+  "item": [
+    {
+      "name": "network",
+      "item": [
+        {
+          "name": "list",
+          "item": [
+            {
+              "name": "Apache CloudStack List Networks",
+              "id": "2a4c56ef-bebd-4c28-95b2-ac672760c197",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "apikey",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "query",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/network/list?command=listNetworks&zoneid=<string>&apikey=<string>&signature=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "network",
+                    "list"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "command",
+                      "value": "listNetworks"
+                    },
+                    {
+                      "description": "Filter networks by zone UUID.",
+                      "key": "zoneid",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "signature",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "List all available networks in the cloud with optional filtering by zone or account."
+              },
+              "response": [
+                {
+                  "id": "a57ddc44-a7de-47ed-95c5-9cd70bd30450",
+                  "name": "List of networks.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/network/list?command=listNetworks&zoneid=<string>&apikey=<API Key>&signature=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "network",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "command",
+                          "value": "listNetworks"
+                        },
+                        {
+                          "description": "Filter networks by zone UUID.",
+                          "key": "zoneid",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "apikey",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "signature",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"listnetworksresponse\": {\n    \"count\": \"<integer>\",\n    \"network\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zoneid\": \"<string>\",\n        \"type\": \"<string>\",\n        \"cidr\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zoneid\": \"<string>\",\n        \"type\": \"<string>\",\n        \"cidr\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-07-28T01:01:39.000Z",
+                  "updatedAt": "2026-07-28T01:01:39.000Z",
+                  "uid": "35240-a57ddc44-a7de-47ed-95c5-9cd70bd30450"
+                },
+                {
+                  "id": "162f2641-4d65-4c74-8dc7-86c031a37871",
+                  "name": "Authentication failed.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/network/list?command=listNetworks&zoneid=<string>&apikey=<API Key>&signature=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "network",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "command",
+                          "value": "listNetworks"
+                        },
+                        {
+                          "description": "Filter networks by zone UUID.",
+                          "key": "zoneid",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "apikey",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "signature",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:01:39.000Z",
+                  "updatedAt": "2026-07-28T01:01:39.000Z",
+                  "uid": "35240-162f2641-4d65-4c74-8dc7-86c031a37871"
+                }
+              ],
+              "createdAt": "2026-07-28T01:01:39.000Z",
+              "updatedAt": "2026-07-28T01:01:39.000Z",
+              "uid": "35240-2a4c56ef-bebd-4c28-95b2-ac672760c197"
+            }
+          ],
+          "id": "688c2425-9344-44d0-bf11-268e94fee485",
+          "createdAt": "2026-07-28T01:01:39.000Z",
+          "updatedAt": "2026-07-28T01:01:39.000Z",
+          "uid": "35240-688c2425-9344-44d0-bf11-268e94fee485"
+        }
+      ],
+      "id": "3d31d799-88fa-4e37-b8eb-43b8bf197708",
+      "createdAt": "2026-07-28T01:01:39.000Z",
+      "updatedAt": "2026-07-28T01:01:39.000Z",
+      "uid": "35240-3d31d799-88fa-4e37-b8eb-43b8bf197708"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/client/api"
+    }
+  ]
+}

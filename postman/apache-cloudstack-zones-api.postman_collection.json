@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "a9f4b346-5017-4fb4-812d-de30b7b3a40d",
+    "name": "Apache CloudStack Networks Zones API",
+    "description": "The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.\n\nContact Support:\n Name: Apache CloudStack Community",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:01:41.000Z",
+    "updatedAt": "2026-07-28T01:01:41.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a9f4b346-5017-4fb4-812d-de30b7b3a40d"
+  },
+  "item": [
+    {
+      "name": "zone",
+      "item": [
+        {
+          "name": "list",
+          "item": [
+            {
+              "name": "Apache CloudStack List Zones",
+              "id": "bdc0b9f6-2b8a-4c27-839f-e9d9873ee65b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "apikey",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "query",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/zone/list?command=listZones&available=<boolean>&apikey=<string>&signature=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "zone",
+                    "list"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "command",
+                      "value": "listZones"
+                    },
+                    {
+                      "description": "Filter to only zones available to the calling user.",
+                      "key": "available",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "signature",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "List all availability zones in the CloudStack deployment."
+              },
+              "response": [
+                {
+                  "id": "74a3c59e-cd49-4140-91ab-07a6831be62d",
+                  "name": "List of availability zones.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/zone/list?command=listZones&available=<boolean>&apikey=<API Key>&signature=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "zone",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "command",
+                          "value": "listZones"
+                        },
+                        {
+                          "description": "Filter to only zones available to the calling user.",
+                          "key": "available",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "apikey",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "signature",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"listzonesresponse\": {\n    \"count\": \"<integer>\",\n    \"zone\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"networktype\": \"Advanced\",\n        \"allocationstate\": \"<string>\",\n        \"securitygroupsenabled\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"networktype\": \"Basic\",\n        \"allocationstate\": \"<string>\",\n        \"securitygroupsenabled\": \"<boolean>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-07-28T01:01:41.000Z",
+                  "updatedAt": "2026-07-28T01:01:41.000Z",
+                  "uid": "35240-74a3c59e-cd49-4140-91ab-07a6831be62d"
+                },
+                {
+                  "id": "d996d893-0692-44af-afb8-69ded223db57",
+                  "name": "Authentication failed.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/zone/list?command=listZones&available=<boolean>&apikey=<API Key>&signature=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "zone",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "command",
+                          "value": "listZones"
+                        },
+                        {
+                          "description": "Filter to only zones available to the calling user.",
+                          "key": "available",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "apikey",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "signature",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:01:41.000Z",
+                  "updatedAt": "2026-07-28T01:01:41.000Z",
+                  "uid": "35240-d996d893-0692-44af-afb8-69ded223db57"
+                }
+              ],
+              "createdAt": "2026-07-28T01:01:41.000Z",
+              "updatedAt": "2026-07-28T01:01:41.000Z",
+              "uid": "35240-bdc0b9f6-2b8a-4c27-839f-e9d9873ee65b"
+            }
+          ],
+          "id": "9e0c175a-eb85-4242-8e97-66e35d4799cb",
+          "createdAt": "2026-07-28T01:01:41.000Z",
+          "updatedAt": "2026-07-28T01:01:41.000Z",
+          "uid": "35240-9e0c175a-eb85-4242-8e97-66e35d4799cb"
+        }
+      ],
+      "id": "21595788-4016-43b2-ab60-f2db9c982a0e",
+      "createdAt": "2026-07-28T01:01:41.000Z",
+      "updatedAt": "2026-07-28T01:01:41.000Z",
+      "uid": "35240-21595788-4016-43b2-ab60-f2db9c982a0e"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/client/api"
+    }
+  ]
+}

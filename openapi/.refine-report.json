@@ -1,0 +1,20 @@
+{
+  "provider": "apache-cloudstack",
+  "sources": [
+    "apache-cloudstack-networks-api-openapi.yml",
+    "apache-cloudstack-virtual-machines-api-openapi.yml",
+    "apache-cloudstack-volumes-api-openapi.yml",
+    "apache-cloudstack-zones-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-cloudstack-networks-api-openapi.yml",
+    "apache-cloudstack-virtual-machines-api-openapi.yml",
+    "apache-cloudstack-volumes-api-openapi.yml",
+    "apache-cloudstack-zones-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
