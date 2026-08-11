@@ -48,14 +48,6 @@ apis:
     url: https://cloudstack.apache.org/api/
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-networks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-virtual-machines.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-volumes.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-zones.yaml
 - aid: apache-cloudstack:apache-cloudstack-virtual-machines-api
   name: Apache CloudStack Virtual Machines API
   description: Virtual machine lifecycle management operations.
@@ -70,14 +62,6 @@ apis:
     url: https://cloudstack.apache.org/api/
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-networks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-virtual-machines.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-volumes.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-zones.yaml
 - aid: apache-cloudstack:apache-cloudstack-volumes-api
   name: Apache CloudStack Volumes API
   description: Volume and snapshot storage management operations.
@@ -92,14 +76,6 @@ apis:
     url: https://cloudstack.apache.org/api/
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-networks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-virtual-machines.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-volumes.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-zones.yaml
 - aid: apache-cloudstack:apache-cloudstack-zones-api
   name: Apache CloudStack Zones API
   description: Zone and availability zone management operations.
@@ -114,15 +90,18 @@ apis:
     url: https://cloudstack.apache.org/api/
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-networks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-virtual-machines.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-volumes.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apache-cloudstack-zones.yaml
 common:
+- type: IssueTracker
+  url: https://github.com/apache/cloudstack/issues
+- type: SecurityPolicy
+  url: https://github.com/apache/cloudstack/blob/main/SECURITY.md
+- type: CodeOfConduct
+  url: https://github.com/apache/.github/blob/main/.github/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/apache/cloudstack/blob/main/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/apache/cloudstack/blob/main/LICENSE
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/apache-cloudstack/overview
 - type: AgenticAccess
