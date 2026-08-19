@@ -1,0 +1,217 @@
+{
+  "item": [
+    {
+      "id": "49e2881f-5975-40c8-8ff6-58dd0f93babf",
+      "name": "Networks",
+      "description": {
+        "content": "Network and IP address management operations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d862cda-ac01-4dd9-9f22-ade7d389044f",
+          "name": "Apache CloudStack List Networks",
+          "request": {
+            "name": "Apache CloudStack List Networks",
+            "description": {
+              "content": "List all available networks in the cloud with optional filtering by zone or account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "network",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "command",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "zoneid",
+                  "value": "<string>",
+                  "description": "Filter networks by zone UUID."
+                },
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "signature",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "523c0016-fa34-4256-a1c3-798d80f7c427",
+              "name": "List of networks.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "network",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "command",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zoneid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "signature",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"listnetworksresponse\": {\n    \"count\": 1,\n    \"network\": [\n      {\n        \"id\": \"net-uuid-1234\",\n        \"name\": \"default-network\",\n        \"state\": \"Implemented\",\n        \"zoneid\": \"zone-uuid-abcd\",\n        \"zonename\": \"us-east-1\",\n        \"type\": \"Isolated\",\n        \"cidr\": \"10.0.0.0/24\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7071cc89-1ac5-49c9-b56b-8424f1a7646d",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "network",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "command",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zoneid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "signature",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080/client/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cbcff592-6772-4533-80cc-cb0148832239",
+    "name": "Apache CloudStack Networks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.\n\nContact Support:\n Name: Apache CloudStack Community",
+      "type": "text/plain"
+    }
+  }
+}

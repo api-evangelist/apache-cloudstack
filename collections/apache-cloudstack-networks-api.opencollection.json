@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache CloudStack Networks API",
+    "version": "4.19.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Networks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache CloudStack List Networks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/network/list",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "zoneid",
+                "value": "",
+                "type": "query",
+                "description": "Filter networks by zone UUID."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "List all available networks in the cloud with optional filtering by zone or account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

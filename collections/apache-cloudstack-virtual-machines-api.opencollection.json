@@ -1,0 +1,255 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache CloudStack Networks Virtual Machines API",
+    "version": "4.19.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Virtual Machines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache CloudStack Deploy Virtual Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query",
+                "description": "API command name."
+              },
+              {
+                "name": "response",
+                "value": "",
+                "type": "query",
+                "description": "Response format."
+              },
+              {
+                "name": "zoneid",
+                "value": "",
+                "type": "query",
+                "description": "UUID of the zone in which to deploy the virtual machine."
+              },
+              {
+                "name": "serviceofferingid",
+                "value": "",
+                "type": "query",
+                "description": "UUID of the service offering for the virtual machine."
+              },
+              {
+                "name": "templateid",
+                "value": "",
+                "type": "query",
+                "description": "UUID of the template to use for the virtual machine."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Display name for the virtual machine."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API key for authentication."
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query",
+                "description": "HMAC-SHA1 signature of the request parameters."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Deploy a new virtual machine from a template in a specified zone and service offering."
+        },
+        {
+          "info": {
+            "name": "Apache CloudStack List Virtual Machines",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/client/api/",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "command",
+                  "value": ""
+                },
+                {
+                  "name": "response",
+                  "value": ""
+                },
+                {
+                  "name": "zoneid",
+                  "value": ""
+                },
+                {
+                  "name": "state",
+                  "value": ""
+                },
+                {
+                  "name": "account",
+                  "value": ""
+                },
+                {
+                  "name": "apikey",
+                  "value": ""
+                },
+                {
+                  "name": "signature",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "List all virtual machines with optional filtering by zone, account, state, or other parameters."
+        },
+        {
+          "info": {
+            "name": "Apache CloudStack Stop Virtual Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/vm/stop",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "UUID of the virtual machine to stop."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Stop a running virtual machine by its UUID."
+        },
+        {
+          "info": {
+            "name": "Apache CloudStack Start Virtual Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/vm/start",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "UUID of the virtual machine to start."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Start a stopped virtual machine by its UUID."
+        },
+        {
+          "info": {
+            "name": "Apache CloudStack Query Async Job Result",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/async/query",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "jobid",
+                "value": "",
+                "type": "query",
+                "description": "UUID of the async job to query."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Query the result of an asynchronous API operation by job ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

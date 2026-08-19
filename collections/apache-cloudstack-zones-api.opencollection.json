@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache CloudStack Networks Zones API",
+    "version": "4.19.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Zones",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache CloudStack List Zones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/zone/list",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "available",
+                "value": "",
+                "type": "query",
+                "description": "Filter to only zones available to the calling user."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "List all availability zones in the CloudStack deployment."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

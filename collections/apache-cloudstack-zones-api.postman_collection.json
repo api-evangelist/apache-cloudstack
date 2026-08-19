@@ -1,0 +1,217 @@
+{
+  "item": [
+    {
+      "id": "9a5965b7-4510-4263-8bd8-ee667277e342",
+      "name": "Zones",
+      "description": {
+        "content": "Zone and availability zone management operations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "59f357ac-46a2-4ff3-a3dd-fe9367594552",
+          "name": "Apache CloudStack List Zones",
+          "request": {
+            "name": "Apache CloudStack List Zones",
+            "description": {
+              "content": "List all availability zones in the CloudStack deployment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "zone",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "command",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "available",
+                  "value": "<boolean>",
+                  "description": "Filter to only zones available to the calling user."
+                },
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "signature",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cb57f168-7552-4927-9ee1-08ed82d49a32",
+              "name": "List of availability zones.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "zone",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "command",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "available",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "signature",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"listzonesresponse\": {\n    \"count\": 1,\n    \"zone\": [\n      {\n        \"id\": \"zone-uuid-abcd\",\n        \"name\": \"us-east-1\",\n        \"networktype\": \"Advanced\",\n        \"allocationstate\": \"Enabled\",\n        \"securitygroupsenabled\": false\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcdf6ec6-747f-4543-b102-08e14243a362",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "zone",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "command",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "available",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "signature",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080/client/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9f2667f5-f230-466d-9187-bfb7f5f8b5a4",
+    "name": "Apache CloudStack Networks Zones API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.\n\nContact Support:\n Name: Apache CloudStack Community",
+      "type": "text/plain"
+    }
+  }
+}

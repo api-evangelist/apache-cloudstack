@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache CloudStack Networks Volumes API",
+    "version": "4.19.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Volumes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache CloudStack List Volumes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/client/api/volume/list",
+            "params": [
+              {
+                "name": "command",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "virtualmachineid",
+                "value": "",
+                "type": "query",
+                "description": "Filter volumes by virtual machine UUID."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by volume type."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "List all volumes with optional filtering by account, zone, virtual machine, or type."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
