@@ -6,6 +6,20 @@ description: Apache CloudStack is an open-source cloud computing platform develo
   by service providers and enterprises to build public, private, and hybrid cloud environments with virtual machine management,
   networking, storage, and multi-tenancy features.
 type: Index
+deliveryModel:
+  model: open-core
+  license: Apache-2.0
+  open_source: true
+  commercial: true
+  callable_host: false
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
