@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache CloudStack Networks Virtual Machines API
   description: The Apache CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and cloud infrastructure resources. It supports both synchronous and asynchronous operations using a query-parameter-based command dispatch pattern.
@@ -353,19 +353,6 @@ paths:
       - apiKeyAuth: []
 components:
   schemas:
-    AsyncJobResponse:
-      title: AsyncJobResponse
-      description: Response returned when an asynchronous CloudStack API operation is initiated.
-      type: object
-      properties:
-        jobid:
-          type: string
-          description: UUID of the asynchronous job to poll for completion.
-          example: a4b6c8d0-1234-5678-90ab-cdef01234567
-        id:
-          type: string
-          description: UUID of the resource being created or modified.
-          example: vm-uuid-1234
     AsyncJobResult:
       title: AsyncJobResult
       description: Result of a completed or in-progress asynchronous CloudStack job.
@@ -393,6 +380,19 @@ components:
             jobresult:
               type: object
               description: Result payload containing the resource created or modified.
+    AsyncJobResponse:
+      title: AsyncJobResponse
+      description: Response returned when an asynchronous CloudStack API operation is initiated.
+      type: object
+      properties:
+        jobid:
+          type: string
+          description: UUID of the asynchronous job to poll for completion.
+          example: a4b6c8d0-1234-5678-90ab-cdef01234567
+        id:
+          type: string
+          description: UUID of the resource being created or modified.
+          example: vm-uuid-1234
     VirtualMachineList:
       title: VirtualMachineList
       description: Paginated list of CloudStack virtual machines.
