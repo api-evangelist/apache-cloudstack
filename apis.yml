@@ -41,7 +41,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-clo
 tags:
 - Apache
 - Cloud
-- IaaS
+- Infrastructure-as-a-Service
 - Infrastructure
 - Open-Source
 - Virtualization
