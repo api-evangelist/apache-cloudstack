@@ -114,6 +114,8 @@ apis:
   - type: GettingStarted
     url: https://docs.cloudstack.apache.org/en/latest/installguide/
 common:
+- type: Website
+  url: https://www.apache.org/
 - type: IssueTracker
   url: https://github.com/apache/cloudstack/issues
 - type: SecurityPolicy
