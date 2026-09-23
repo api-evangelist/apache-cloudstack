@@ -1,10 +1,7 @@
 {
   "provider": "apache-cloudstack",
   "sources": [
-    "apache-cloudstack-networks-api-openapi.yml",
-    "apache-cloudstack-virtual-machines-api-openapi.yml",
-    "apache-cloudstack-volumes-api-openapi.yml",
-    "apache-cloudstack-zones-api-openapi.yml"
+    "_ae-authored/apache-cloudstack-api-openapi.yaml"
   ],
   "outputs": [
     "apache-cloudstack-networks-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "apache-cloudstack-networks-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-cloudstack-virtual-machines-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-cloudstack-volumes-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-cloudstack-zones-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-cloudstack-api-openapi.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "apache-cloudstack-networks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-cloudstack-virtual-machines-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-cloudstack-volumes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-cloudstack-zones-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
