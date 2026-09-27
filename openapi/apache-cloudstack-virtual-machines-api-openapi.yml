@@ -353,49 +353,6 @@ paths:
       - apiKeyAuth: []
 components:
   schemas:
-    AsyncJobResult:
-      title: AsyncJobResult
-      description: Result of a completed or in-progress asynchronous CloudStack job.
-      type: object
-      properties:
-        queryasyncjobresultresponse:
-          type: object
-          properties:
-            jobid:
-              type: string
-              description: UUID of the async job.
-              example: a4b6c8d0-1234-5678-90ab-cdef01234567
-            jobstatus:
-              type: integer
-              description: Job status code (0=pending, 1=success, 2=failure).
-              enum:
-              - 0
-              - 1
-              - 2
-              example: 1
-            jobresultcode:
-              type: integer
-              description: Result code (0 for success).
-              example: 0
-            jobresult:
-              type: object
-              description: Result payload containing the resource created or modified.
-    VirtualMachineList:
-      title: VirtualMachineList
-      description: Paginated list of CloudStack virtual machines.
-      type: object
-      properties:
-        listvirtualmachinesresponse:
-          type: object
-          properties:
-            count:
-              type: integer
-              description: Total number of virtual machines matching the query.
-              example: 1
-            virtualmachine:
-              type: array
-              items:
-                $ref: '#/components/schemas/VirtualMachine'
     VirtualMachine:
       title: VirtualMachine
       description: A CloudStack virtual machine resource with its configuration and runtime state.
@@ -450,6 +407,33 @@ components:
           type: string
           description: Primary IP address of the virtual machine.
           example: 10.0.0.100
+    AsyncJobResult:
+      title: AsyncJobResult
+      description: Result of a completed or in-progress asynchronous CloudStack job.
+      type: object
+      properties:
+        queryasyncjobresultresponse:
+          type: object
+          properties:
+            jobid:
+              type: string
+              description: UUID of the async job.
+              example: a4b6c8d0-1234-5678-90ab-cdef01234567
+            jobstatus:
+              type: integer
+              description: Job status code (0=pending, 1=success, 2=failure).
+              enum:
+              - 0
+              - 1
+              - 2
+              example: 1
+            jobresultcode:
+              type: integer
+              description: Result code (0 for success).
+              example: 0
+            jobresult:
+              type: object
+              description: Result payload containing the resource created or modified.
     AsyncJobResponse:
       title: AsyncJobResponse
       description: Response returned when an asynchronous CloudStack API operation is initiated.
@@ -463,6 +447,22 @@ components:
           type: string
           description: UUID of the resource being created or modified.
           example: vm-uuid-1234
+    VirtualMachineList:
+      title: VirtualMachineList
+      description: Paginated list of CloudStack virtual machines.
+      type: object
+      properties:
+        listvirtualmachinesresponse:
+          type: object
+          properties:
+            count:
+              type: integer
+              description: Total number of virtual machines matching the query.
+              example: 1
+            virtualmachine:
+              type: array
+              items:
+                $ref: '#/components/schemas/VirtualMachine'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

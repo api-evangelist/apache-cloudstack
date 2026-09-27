@@ -46,7 +46,7 @@ tags:
 - Cloud
 - Infrastructure-as-a-Service
 - Infrastructure
-- Open-Source
+- Open Source
 - Virtualization
 tags_raw:
 - Apache
@@ -55,6 +55,7 @@ tags_raw:
 - Infrastructure
 - Open Source
 - Virtualization
+- Open-Source
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-cloudstack/refs/heads/main/apis.yml

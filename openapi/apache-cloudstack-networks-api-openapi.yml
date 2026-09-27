@@ -80,6 +80,21 @@ paths:
       - apiKeyAuth: []
 components:
   schemas:
+    NetworkList:
+      title: NetworkList
+      description: Paginated list of CloudStack networks.
+      type: object
+      properties:
+        listnetworksresponse:
+          type: object
+          properties:
+            count:
+              type: integer
+              example: 1
+            network:
+              type: array
+              items:
+                $ref: '#/components/schemas/Network'
     Network:
       title: Network
       description: A CloudStack network resource providing connectivity for virtual machines.
@@ -109,21 +124,6 @@ components:
           type: string
           description: CIDR block of the network.
           example: 10.0.0.0/24
-    NetworkList:
-      title: NetworkList
-      description: Paginated list of CloudStack networks.
-      type: object
-      properties:
-        listnetworksresponse:
-          type: object
-          properties:
-            count:
-              type: integer
-              example: 1
-            network:
-              type: array
-              items:
-                $ref: '#/components/schemas/Network'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

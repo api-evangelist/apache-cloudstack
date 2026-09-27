@@ -78,6 +78,21 @@ paths:
       - apiKeyAuth: []
 components:
   schemas:
+    ZoneList:
+      title: ZoneList
+      description: List of CloudStack availability zones.
+      type: object
+      properties:
+        listzonesresponse:
+          type: object
+          properties:
+            count:
+              type: integer
+              example: 1
+            zone:
+              type: array
+              items:
+                $ref: '#/components/schemas/Zone'
     Zone:
       title: Zone
       description: A CloudStack availability zone grouping compute, network, and storage resources.
@@ -106,21 +121,6 @@ components:
           type: boolean
           description: Whether security groups are enabled in the zone.
           example: false
-    ZoneList:
-      title: ZoneList
-      description: List of CloudStack availability zones.
-      type: object
-      properties:
-        listzonesresponse:
-          type: object
-          properties:
-            count:
-              type: integer
-              example: 1
-            zone:
-              type: array
-              items:
-                $ref: '#/components/schemas/Zone'
   securitySchemes:
     apiKeyAuth:
       type: apiKey
