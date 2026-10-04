@@ -88,6 +88,21 @@ paths:
       - apiKeyAuth: []
 components:
   schemas:
+    VolumeList:
+      title: VolumeList
+      description: Paginated list of CloudStack volumes.
+      type: object
+      properties:
+        listvolumesresponse:
+          type: object
+          properties:
+            count:
+              type: integer
+              example: 1
+            volume:
+              type: array
+              items:
+                $ref: '#/components/schemas/Volume'
     Volume:
       title: Volume
       description: A CloudStack storage volume attached to a virtual machine.
@@ -121,21 +136,6 @@ components:
           type: string
           description: UUID of the virtual machine this volume is attached to.
           example: vm-uuid-1234
-    VolumeList:
-      title: VolumeList
-      description: Paginated list of CloudStack volumes.
-      type: object
-      properties:
-        listvolumesresponse:
-          type: object
-          properties:
-            count:
-              type: integer
-              example: 1
-            volume:
-              type: array
-              items:
-                $ref: '#/components/schemas/Volume'
   securitySchemes:
     apiKeyAuth:
       type: apiKey
