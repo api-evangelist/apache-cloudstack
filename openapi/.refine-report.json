@@ -1,9 +1,12 @@
 {
   "provider": "apache-cloudstack",
   "sources": [
+    "_original/apache-cloudstack-openapi.json",
     "_ae-authored/apache-cloudstack-api-openapi.yaml"
   ],
   "outputs": [
+    "apache-cloudstack-queues-api-openapi.yml",
+    "apache-cloudstack-status-api-openapi.yml",
     "apache-cloudstack-networks-api-openapi.yml",
     "apache-cloudstack-virtual-machines-api-openapi.yml",
     "apache-cloudstack-volumes-api-openapi.yml",
@@ -13,9 +16,10 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-cloudstack-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
     "apache-cloudstack-api-openapi.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "apis.yml register: written (+2 apis, 6 total)"
   ],
   "skipped": [
     "apache-cloudstack-networks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
