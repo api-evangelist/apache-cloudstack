@@ -1,4 +1,4 @@
-# Apache CloudStack (apache-cloudstack)
+# Apache CloudStack
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,123 +66,176 @@
 
 Apache CloudStack is an open-source cloud computing platform developed by the Apache Software Foundation for creating, managing, and deploying infrastructure cloud services. It provides a comprehensive IaaS platform supporting multiple hypervisors (KVM, VMware vSphere, XenServer) and a rich API for programmatic cloud resource management. CloudStack is used by service providers and enterprises to build public, private, and hybrid cloud environments with virtual machine management, networking, storage, and multi-tenancy features.
 
-**URL:** [https://cloudstack.apache.org/](https://cloudstack.apache.org/)
+**Areas:** Apache · Cloud · Infrastructure-as-a-Service · Infrastructure · Open Source · Virtualization
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache CloudStack on APIs.io
 
-## Tags
+Everything profiled for Apache CloudStack is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-cloudstack/](https://apis.io/providers/apache-cloudstack/)** — or go straight to one of the APIs or properties below.
 
- - Apache, Cloud, IaaS, Infrastructure, Open Source, Virtualization
+### APIs (4)
 
-## Timestamps
+- [Apache CloudStack Networks API](https://apis.io/apis/apache-cloudstack/apache-cloudstack-networks-api/) — Network and IP address management operations.
+- [Apache CloudStack Virtual Machines API](https://apis.io/apis/apache-cloudstack/apache-cloudstack-virtual-machines-api/) — Virtual machine lifecycle management operations.
+- [Apache CloudStack Volumes API](https://apis.io/apis/apache-cloudstack/apache-cloudstack-volumes-api/) — Volume and snapshot storage management operations.
+- [Apache CloudStack Zones API](https://apis.io/apis/apache-cloudstack/apache-cloudstack-zones-api/) — Zone and availability zone management operations.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache CloudStack API
-The CloudStack API provides comprehensive REST endpoints for managing virtual machines, networks, storage volumes, accounts, domains, zones, and all cloud infrastructure resources using a query-parameter-based command dispatch pattern with HMAC-SHA1 authentication and asynchronous job support.
+#### Agentic access (1)
 
-**Human URL:** [https://cloudstack.apache.org/api/](https://cloudstack.apache.org/api/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Apache Cloudstack Agentic Access](https://apis.io/agentic-access/apache-cloudstack/apache-cloudstack-agentic-access/)
 
- - Cloud, IaaS, REST, Virtual Machines
+#### JSON Schema (5)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://cloudstack.apache.org/api/)
-- [OpenAPI](openapi/apache-cloudstack-api-openapi.yaml)
-- [GettingStarted](https://docs.cloudstack.apache.org/en/latest/installguide/)
+- [AsyncJobResponse](https://apis.io/schemas/apache-cloudstack/cloudstack-api-async-job-response/)
+- [Network](https://apis.io/schemas/apache-cloudstack/cloudstack-api-network/)
+- [VirtualMachine](https://apis.io/schemas/apache-cloudstack/cloudstack-api-virtual-machine/)
+- [Volume](https://apis.io/schemas/apache-cloudstack/cloudstack-api-volume/)
+- [Zone](https://apis.io/schemas/apache-cloudstack/cloudstack-api-zone/)
 
-## Common Properties
+#### JSON Structure (5)
 
-- [GitHubOrganization](https://github.com/apache)
-- [GitHubRepository](https://github.com/apache/cloudstack)
+Data models expressed in JSON Structure.
+
+- [Cloudstack Api Async Job Response Structure](https://apis.io/json-structure/apache-cloudstack/cloudstack-api-async-job-response-structure/)
+- [Cloudstack Api Network Structure](https://apis.io/json-structure/apache-cloudstack/cloudstack-api-network-structure/)
+- [Cloudstack Api Virtual Machine Structure](https://apis.io/json-structure/apache-cloudstack/cloudstack-api-virtual-machine-structure/)
+- [Cloudstack Api Volume Structure](https://apis.io/json-structure/apache-cloudstack/cloudstack-api-volume-structure/)
+- [Cloudstack Api Zone Structure](https://apis.io/json-structure/apache-cloudstack/cloudstack-api-zone-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Cloudstack Context](https://apis.io/jsonld/apache-cloudstack/apache-cloudstack-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Cloudstack Vocabulary](https://apis.io/vocabularies/apache-cloudstack/apache-cloudstack-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Cloudstack Api Network Example](https://apis.io/examples/apache-cloudstack/cloudstack-api-network-example/)
+- [Cloudstack Api Virtual Machine Example](https://apis.io/examples/apache-cloudstack/cloudstack-api-virtual-machine-example/)
+- [Cloudstack Api Zone Example](https://apis.io/examples/apache-cloudstack/cloudstack-api-zone-example/)
+
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [Apache CloudStack Networks API](https://apis.io/collections/apache-cloudstack/open-apache-cloudstack-networks-api/)
+- [Apache CloudStack Networks Virtual Machines API](https://apis.io/collections/apache-cloudstack/open-apache-cloudstack-virtual-machines-api/)
+- [Apache CloudStack Networks Volumes API](https://apis.io/collections/apache-cloudstack/open-apache-cloudstack-volumes-api/)
+- [Apache CloudStack Networks Zones API](https://apis.io/collections/apache-cloudstack/open-apache-cloudstack-zones-api/)
+- [Apache CloudStack Networks API](https://apis.io/collections/apache-cloudstack/postman-apache-cloudstack-networks-api/)
+- [Apache CloudStack Networks Virtual Machines API](https://apis.io/collections/apache-cloudstack/postman-apache-cloudstack-virtual-machines-api/)
+- [Apache CloudStack Networks Volumes API](https://apis.io/collections/apache-cloudstack/postman-apache-cloudstack-volumes-api/)
+- [Apache CloudStack Networks Zones API](https://apis.io/collections/apache-cloudstack/postman-apache-cloudstack-zones-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache CloudStack — jsonschema rules](https://apis.io/rules/apache-cloudstack/apache-cloudstack-jsonschema-spectral-rules/)
+- [Apache CloudStack API Rules](https://apis.io/rules/apache-cloudstack/apache-cloudstack-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Cloudstack Authentication](https://apis.io/security/apache-cloudstack/apache-cloudstack-authentication/)
+- [Apache Cloudstack Domain Security](https://apis.io/security/apache-cloudstack/apache-cloudstack-domain-security/)
+- [Apache Cloudstack Vulnerability Disclosure](https://apis.io/security/apache-cloudstack/apache-cloudstack-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Cloudstack Plans Pricing](https://apis.io/plans/apache-cloudstack/apache-cloudstack-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Cloudstack Rate Limits](https://apis.io/rate-limits/apache-cloudstack/apache-cloudstack-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Cloudstack Finops](https://apis.io/finops/apache-cloudstack/apache-cloudstack-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://docs.cloudstack.apache.org/)
-- [GettingStarted](https://docs.cloudstack.apache.org/en/latest/installguide/)
+- [Getting started](https://docs.cloudstack.apache.org/en/latest/installguide/)
 - [Support](https://cloudstack.apache.org/community/)
-- [TermsOfService](https://www.apache.org/licenses/)
-- [ChangeLog](https://github.com/apache/cloudstack/releases)
+- [Changelog](https://github.com/apache/cloudstack/releases)
+- [Terms of service](https://www.apache.org/licenses/)
+- [GitHub](https://github.com/apache)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Virtual Machine Management | Full VM lifecycle management including deploy, start, stop, reboot, migrate, and destroy across multiple hypervisors. |
-| Multi-Hypervisor Support | Support for KVM, VMware vSphere, XenServer, and Hyper-V hypervisors within a single CloudStack deployment. |
-| Network Management | Advanced networking with isolated networks, shared networks, VLANs, VPNs, and software-defined networking. |
-| Storage Management | Primary and secondary storage management with volume snapshots, templates, and ISOs. |
-| Multi-Tenancy | Account and domain hierarchy for isolating resources between tenants, departments, and organizations. |
-| Asynchronous API | Long-running operations return async job IDs that can be polled for completion status. |
-| Security Groups | Stateful firewall rules for controlling inbound and outbound traffic to virtual machines. |
-| Auto Scaling | Automatic scaling of VM instances in response to load conditions using configurable policies. |
-| REST API | Comprehensive query-parameter-based REST API with HMAC-SHA1 authentication for programmatic cloud management. |
-| CloudStack UI | Web-based management console for administrators and users to manage cloud resources visually. |
+**Kin Score 38.0** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 20.6 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 34.5 |
+| Access clarity | 18.4 |
 
-| Name | Description |
-|------|-------------|
-| Public Cloud Infrastructure | Build and operate public IaaS clouds for service providers offering compute, storage, and networking. |
-| Private Enterprise Cloud | Deploy private clouds for enterprise organizations needing isolated, on-premises infrastructure. |
-| Hybrid Cloud Orchestration | Extend on-premises CloudStack clouds to public cloud providers for burst capacity and disaster recovery. |
-| Managed Service Provider Hosting | Host multi-tenant virtual server environments for managed service providers and resellers. |
-| Development and Test Environments | Provision self-service development and testing environments on demand for engineering teams. |
+**Agent readiness 22.9** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| KVM | KVM hypervisor support for Linux-based compute clusters in CloudStack zones. |
-| VMware vSphere | VMware vSphere integration for managing ESXi hosts and vCenter clusters via CloudStack. |
-| Apache Cloudbridge | Integration with Apache Cloudbridge for hybrid cloud connectivity between CloudStack and AWS. |
-| Ceph | Ceph distributed storage integration for primary storage in CloudStack deployments. |
-| OpenDaylight | OpenDaylight SDN controller integration for software-defined networking in CloudStack. |
-| Terraform | HashiCorp Terraform CloudStack provider for infrastructure-as-code provisioning. |
-| Ansible | Ansible CloudStack modules for automating VM provisioning and cloud management tasks. |
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-cloudstack/](https://apis.io/providers/apache-cloudstack/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Apache CloudStack API](openapi/apache-cloudstack-api-openapi.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache CloudStack: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-5 schema files covering VirtualMachine, Network, Volume, Zone, and AsyncJobResponse.
-
-### JSON-LD
-
-- [Apache CloudStack Context](json-ld/apache-cloudstack-context.jsonld)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Apache CloudStack API](capabilities/shared/cloudstack-api.yaml) — 8 operations for VM lifecycle, network listing, volume listing, zone browsing, and async job polling
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Apache CloudStack IaaS Management](capabilities/cloudstack-iaas-management.yaml) | CloudStack API | 5 | Cloud Administrator, Cloud Tenant |
-
-## Vocabulary
-
-- [Apache CloudStack Vocabulary](vocabulary/apache-cloudstack-vocabulary.yaml) — Domain taxonomy mapping 8 resources, 6 actions, 1 workflow, and 2 personas for IaaS cloud management
-
-## Rules
-
-- [Apache CloudStack Spectral Rules](rules/apache-cloudstack-spectral-rules.yml) — 12 rules across 5 categories enforcing Apache CloudStack API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-cloudstack/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
